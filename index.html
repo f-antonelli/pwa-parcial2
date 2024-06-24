@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parcial 2 | Federico Antonelli</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Taskmgr</h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#" id="new-task-btn">Crear Nueva Tarea</a></li>
+          <li><a href="#" id="settings-btn">Configurar Aplicación</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="task-list" class="task-list"></div>
+    </main>
+
+    <!-- MODALS -->
+    <div id="new-task-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Crear Nueva Tarea</h2>
+        <form id="new-task-form">
+          <label for="task-title">Título:</label>
+          <input type="text" id="task-title" name="title" required />
+          <label for="task-description">Detalle:</label>
+          <textarea
+            id="task-description"
+            name="description"
+            required
+          ></textarea>
+          <label for="task-status">Estado:</label>
+          <select id="task-status" name="status" required>
+            <option value="sin realizar" selected>Sin realizar</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="finalizado">Finalizado</option>
+          </select>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="change-status-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Cambiar Estado de Tarea</h2>
+        <p>ID de la Tarea:<span id="task-id-display"></span></p>
+        <p>Título: <span id="task-title-display"></span></p>
+        <form id="change-status-form" data-task-id="">
+          <label for="status">Nuevo Estado:</label>
+          <select id="status" name="status" required>
+            <option value="sin realizar">Sin realizar</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="finalizado">Finalizado</option>
+          </select>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="settings-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Configuración de la Aplicación</h2>
+        <label for="language">Idioma del Audio:</label>
+        <select id="language">
+          <option value="es-MX">Español México</option>
+          <option value="es-ES">Español España</option>
+          <option value="es-US">Español USA</option>
+          <option value="it-IT">Italiano</option>
+          <option value="en-GB">Inglés británico</option>
+          <option value="en-US">Inglés norteamericano</option>
+          <option value="en-CA">Inglés canadiense</option>
+          <option value="pt-BR">Portugués de brasil</option>
+          <option value="pt-PT">Portugués</option>
+        </select>
+        <br /><br />
+        <label for="speed">Velocidad de Reproducción:</label>
+        <input
+          type="range"
+          id="speed"
+          name="speed"
+          min="0.1"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+        <br /><br />
+        <button onclick="saveConfiguration()">Guardar Configuración</button>
+        <button onclick="closeSettings()">Cerrar</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./js/settings.js"></script>
+    <script type="text/javascript" src="./js/read-task.js"></script>
+    <script type="text/javascript" src="./js/show-new-status.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* NAV */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 7vh;
+  width: 100%;
+  background-color: #1f693e;
+}
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* TASKS */
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.card .card-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-buttons .change-status {
+  width: 40px;
+  height: 40px;
+}
+.card button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card button img {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 2em);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  margin-top: 1em;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.modal-content button {
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: #00ff6a;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #00ff6a;
+}
+
+.card.finished {
+  background-color: #f0f0f0;
+  color: #888;
+}
+
+.card .finished-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: green;
+}
